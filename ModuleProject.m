@@ -54,10 +54,10 @@ Vf = 2;
 R_led = 150;
 
 % Microphone voltages: from loud (-50mV) to silence (0V)
-mic_v = linspace(-0.05, 0, 500);  % in Volts
+mic_v = linspace(0, 0.05, 500);  % in Volts
 
 % Op-amp output: Vout = gain * (0 - mic_v)
-vout = gain * -mic_v;
+vout = gain * mic_v;
 
 % Brightness model: only active if Vout > Vf
 brightness = max(0, vout - Vf);
